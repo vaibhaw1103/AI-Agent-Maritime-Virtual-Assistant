@@ -1,0 +1,12 @@
+# Code owners for repository areas
+# Format: <pattern> <owner1> <owner2>
+
+# Backend maintainers
+/backend/ @vaibhaw1103 @your-backend-team
+
+# Frontend maintainers
+/app/ @vaibhaw1103 @your-frontend-team
+
+# Docs and CI
+/README.md @vaibhaw1103
+/PROJECT_STRUCTURE.md @vaibhaw1103

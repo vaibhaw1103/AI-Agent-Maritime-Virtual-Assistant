@@ -1,0 +1,158 @@
+:root {
+  /* Maritime Color Palette */
+  --navy-blue: #003366;
+  --ocean-blue: #0077be;
+  --deep-sea: #1b4965;
+  --wave-blue: #5fa8d3;
+  --seafoam: #98c1d9;
+  --coral: #ff7f50;
+  --sand: #f4e4bc;
+  --cloud: #f7f9fb;
+  
+  /* Functional Colors */
+  --success: #2d936c;
+  --warning: #f9bc60;
+  --danger: #e63946;
+  --info: #457b9d;
+  
+  /* UI Elements */
+  --bg-primary: var(--deep-sea);
+  --bg-secondary: var(--navy-blue);
+  --bg-tertiary: #ffffff;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: var(--seafoam);
+  
+  /* Accents */
+  --accent-primary: var(--coral);
+  --accent-secondary: var(--wave-blue);
+  
+  /* Borders and Shadows */
+  --border-color: rgba(255, 255, 255, 0.1);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--navy-blue), var(--deep-sea));
+  --gradient-secondary: linear-gradient(135deg, var(--ocean-blue), var(--wave-blue));
+  
+  /* Animation */
+  --transition-speed: 0.2s;
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-sea);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wave-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ocean-blue);
+}
+
+/* Maritime-themed components */
+.maritime-chat-container {
+  background: var(--gradient-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+.maritime-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+}
+
+.maritime-message {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  transition: all var(--transition-speed) var(--ease-out);
+}
+
+.maritime-message:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.maritime-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+}
+
+.maritime-button {
+  background: var(--gradient-secondary);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all var(--transition-speed) var(--ease-out);
+}
+
+.maritime-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Message types */
+.message-user {
+  background: rgba(255, 255, 255, 0.1);
+  margin-left: auto;
+  border-top-right-radius: 0;
+}
+
+.message-assistant {
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: auto;
+  border-top-left-radius: 0;
+}
+
+/* Maritime-themed badges */
+.maritime-badge {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Animations */
+@keyframes wave {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+.maritime-loading {
+  animation: wave 1.5s infinite;
+}
+
+/* Maritime Icons */
+.maritime-icon {
+  color: var(--accent-secondary);
+  transition: all var(--transition-speed) var(--ease-out);
+}
+
+.maritime-icon:hover {
+  color: var(--accent-primary);
+  transform: scale(1.1);
+}

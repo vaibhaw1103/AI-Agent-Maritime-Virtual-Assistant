@@ -1,0 +1,238 @@
+/* Enhanced Maritime Map Styles */
+.maritime-map-container {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Source and Destination Markers */
+.source-marker {
+  z-index: 1000 !important;
+}
+
+.source-marker:hover .source-body {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 12px rgba(16, 185, 129, 0.6));
+}
+
+.destination-marker {
+  z-index: 1000 !important;
+}
+
+.destination-marker:hover .destination-body {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 12px rgba(239, 68, 68, 0.6));
+}
+
+/* Ship Markers */
+.ship-marker {
+  z-index: 900 !important;
+  transition: all 0.3s ease;
+}
+
+.ship-marker.active {
+  z-index: 950 !important;
+}
+
+.ship-marker:hover .ship-body {
+  transform: scale(1.15);
+  filter: drop-shadow(0 8px 16px rgba(59, 130, 246, 0.7));
+}
+
+/* Port and Weather Markers */
+.port-marker {
+  z-index: 800 !important;
+  transition: all 0.3s ease;
+}
+
+.port-marker.major {
+  z-index: 850 !important;
+}
+
+.port-marker:hover {
+  transform: scale(1.1);
+}
+
+.weather-marker {
+  z-index: 700 !important;
+  transition: all 0.3s ease;
+}
+
+.weather-marker:hover {
+  transform: scale(1.1);
+}
+
+/* Waypoint Markers */
+.waypoint-marker {
+  z-index: 600 !important;
+  transition: all 0.3s ease;
+}
+
+.waypoint-marker:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes sourcePulse {
+  0% { 
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes destPulse {
+  0% { 
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(1.6);
+  }
+}
+
+@keyframes radarPulse {
+  0% { 
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  50% { 
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* Leaflet Popup Enhancements */
+.leaflet-popup-content-wrapper {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4) !important;
+  border: 2px solid rgba(255,255,255,0.1) !important;
+}
+
+.leaflet-popup-content {
+  margin: 16px 20px !important;
+  line-height: 1.5 !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif !important;
+}
+
+.leaflet-popup-tip {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+  border: 2px solid rgba(255,255,255,0.1) !important;
+}
+
+.leaflet-popup-close-button {
+  color: white !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #f87171 !important;
+}
+
+.port-name {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: bold;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.port-marker:hover .port-name {
+  opacity: 1;
+}
+
+/* Enhanced Weather Marker Styles */
+.weather-marker {
+  position: relative;
+  z-index: 800;
+}
+
+.weather-condition {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.weather-marker:hover .weather-condition {
+  opacity: 1;
+}
+
+/* Enhanced Waypoint Styles */
+.waypoint-marker.enhanced {
+  position: relative;
+  z-index: 700;
+}
+
+.waypoint-body {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Enhanced Route Animation */
+.animated-route {
+  animation: routeDash 2s linear infinite;
+}
+
+/* Keyframe Animations */
+@keyframes shipPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes routeDash {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -20; }
+}
+
+/* Enhanced Popup Styles */
+.leaflet-popup-content-wrapper {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  line-height: 1.4;
+}
+
+.leaflet-popup-tip {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+}

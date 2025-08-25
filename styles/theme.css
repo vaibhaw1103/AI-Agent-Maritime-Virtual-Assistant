@@ -1,0 +1,55 @@
+@import '../node_modules/tailwindcss/base.css';
+@import '../node_modules/tailwindcss/components.css';
+@import '../node_modules/tailwindcss/utilities.css';
+
+:root {
+  --background: #003366;
+  --foreground: #ffffff;
+  
+  --card: rgba(255, 255, 255, 0.1);
+  --card-foreground: #ffffff;
+  
+  --border: rgba(255, 255, 255, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  
+  --primary: #0077be;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #5fa8d3;
+  --secondary-foreground: #ffffff;
+  
+  --accent: #ff7f50;
+  --accent-foreground: #ffffff;
+  
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  
+  --ring: rgba(255, 255, 255, 0.2);
+  
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #003366;
+  --foreground: #ffffff;
+  
+  --card: rgba(255, 255, 255, 0.1);
+  --card-foreground: #ffffff;
+  
+  --border: rgba(255, 255, 255, 0.2);
+  --input: rgba(255, 255, 255, 0.1);
+  
+  --primary: #0077be;
+  --primary-foreground: #ffffff;
+  
+  --secondary: #5fa8d3;
+  --secondary-foreground: #ffffff;
+  
+  --accent: #ff7f50;
+  --accent-foreground: #ffffff;
+  
+  --destructive: #ff4444;
+  --destructive-foreground: #ffffff;
+  
+  --ring: rgba(255, 255, 255, 0.2);
+}
