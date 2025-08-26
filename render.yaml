@@ -9,14 +9,14 @@ services:
     envVars:
       - key: DATABASE_URL
         fromService:
-          type: postgres
+          type: pserv
           name: aquaintel-db
-          property: connectionString
+          envVarKey: DATABASE_URL
       - key: REDIS_URL
         fromService:
-          type: redis
+          type: pserv
           name: aquaintel-redis
-          property: connectionString
+          envVarKey: REDIS_URL
       - key: SECRET_KEY
         generateValue: true
       - key: GROQ_API_KEY
@@ -40,12 +40,16 @@ services:
       paths:
       - backend/**
 
-  - type: postgres
+  - type: pserv
     name: aquaintel-db
+    image:
+      url: postgres:15-alpine
     region: oregon
     plan: free
 
-  - type: redis
+  - type: pserv
     name: aquaintel-redis
+    image:
+      url: redis:7-alpine
     region: oregon
     plan: free
