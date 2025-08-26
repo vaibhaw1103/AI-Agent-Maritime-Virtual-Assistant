@@ -9,12 +9,12 @@ services:
     envVars:
       - key: DATABASE_URL
         fromService:
-          type: pserv
+          type: postgres
           name: aquaintel-db
           property: connectionString
       - key: REDIS_URL
         fromService:
-          type: pserv
+          type: redis
           name: aquaintel-redis
           property: connectionString
       - key: SECRET_KEY
@@ -40,16 +40,12 @@ services:
       paths:
       - backend/**
 
-  - type: pserv
+  - type: postgres
     name: aquaintel-db
-    image:
-      url: postgres:15-alpine
     region: oregon
     plan: free
 
-  - type: pserv
+  - type: redis
     name: aquaintel-redis
-    image:
-      url: redis:7-alpine
     region: oregon
     plan: free
