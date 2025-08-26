@@ -24,6 +24,7 @@ passlib[bcrypt]==1.7.4
 python-dotenv==1.0.0
 aiofiles==23.2.1
 
+
 # -- DATA & ML --
 pandas==2.1.4
 numpy==1.24.3
@@ -47,6 +48,6 @@ PyMuPDF==1.23.0
 geopy==2.4.1
 shapely==2.0.2
 folium==0.15.1
-meteomatics==1.0.0
+meteomatics==2.11.6
 stormglass==0.1.0
 noaa-coops==0.1.0
