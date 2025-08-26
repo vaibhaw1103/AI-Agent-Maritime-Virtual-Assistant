@@ -32,6 +32,7 @@ services:
 
   - type: pserv
     name: aquaintel-db
+    env: docker
     image:
       url: postgres:15-alpine
     region: oregon
@@ -39,6 +40,7 @@ services:
 
   - type: pserv
     name: aquaintel-redis
+    env: docker
     image:
       url: redis:7-alpine
     region: oregon
