@@ -99,3 +99,4 @@ volumes:
 networks:
   aquaintel-network:
     driver: bridge
+
