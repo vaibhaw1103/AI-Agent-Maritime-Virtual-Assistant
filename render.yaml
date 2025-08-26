@@ -7,16 +7,6 @@ services:
     dockerfilePath: ./backend/Dockerfile
     healthCheckPath: /health
     envVars:
-      - key: DATABASE_URL
-        fromService:
-          type: pserv
-          name: aquaintel-db
-          envVarKey: DATABASE_URL
-      - key: REDIS_URL
-        fromService:
-          type: pserv
-          name: aquaintel-redis
-          envVarKey: REDIS_URL
       - key: SECRET_KEY
         generateValue: true
       - key: GROQ_API_KEY
