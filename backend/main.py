@@ -1279,6 +1279,10 @@ async def health_check():
         "timestamp": datetime.now().isoformat()
     }
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
 # AUTHENTICATION ENDPOINTS
 @app.post("/auth/register", response_model=Dict[str, Any])
 async def register_user(user_data: UserCreate):

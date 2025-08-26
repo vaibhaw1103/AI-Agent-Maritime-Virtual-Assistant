@@ -1,0 +1,64 @@
+services:
+  - type: web
+    name: aquaintel-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: "pip install -r backend/requirements.txt"
+        startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        fromService:
+          type: pserv
+          name: aquaintel-db
+          property: connectionString
+      - key: REDIS_URL
+        fromService:
+          type: pserv
+          name: aquaintel-redis
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GROQ_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: AZURE_STORAGE_CONNECTION_STRING
+        sync: false
+      - key: AZURE_FORM_RECOGNIZER_ENDPOINT
+        sync: false
+      - key: AZURE_FORM_RECOGNIZER_KEY
+        sync: false
+      - key: METEO_MATICS_API_KEY
+        sync: false
+      - key: STORMGLASS_API_KEY
+        sync: false
+    autoDeploy: true
+    buildFilter:
+      paths:
+      - backend/**
+
+  - type: pserv
+    name: aquaintel-db
+    image:
+      url: postgres:15-alpine
+    region: oregon
+    plan: free
+    disk:
+      name: postgres_data
+      sizeGB: 1
+      mountPath: /var/lib/postgresql/data
+
+  - type: pserv
+    name: aquaintel-redis
+    image:
+      url: redis:7-alpine
+    region: oregon
+    plan: free
+    disk:
+      name: redis_data
+      sizeGB: 1
+      mountPath: /data
